@@ -164,7 +164,7 @@ expr ::=
 	| ( ( schema-name '.' )? table-name '.' )? column-name 
 	| unary-operator expr 
 	| expr binary-operator expr 
-	| function-name '(' ( 'DISINCT'? expr ( ',' expr )* | '*' )? ')' filter-clause? over-clause? 
+	| function-name '(' ( 'DISTINCT'? expr ( ',' expr )* | '*' )? ')' filter-clause? over-clause? 
 	| '(' expr ( ',' expr )* ')' 
 	| 'CAST' '(' expr 'AS' type-name ')' 
 	| expr 'COLLATE' collation-name 
@@ -189,7 +189,7 @@ upsert-clause ::= 'ON' 'CONFLICT' ( '(' indexed-column ( ',' indexed-column ) ( 
 pragma-value ::= ( signed-number | name | string-literal )
 
 select-core ::= 
-	( 'SELECT' ( 'DISINCT' | 'ALL' )? result-column ( ',' result-column )* 
+	( 'SELECT' ( 'DISTINCT' | 'ALL' )? result-column ( ',' result-column )* 
 		( 'FROM' ( table-or-subquery ( ',' table-or-subquery )* | join-clause ) )? 
 		( 'WHERE' expr )? 
 		( 'GROUP' 'BY' expr ( ',' expr )* ( 'HAVING' expr )? )?
